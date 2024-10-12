@@ -1,7 +1,8 @@
 <script>
 import Layout from '@layouts/default'
-import { authMethods } from '@state/helpers'
 import appConfig from '@src/app.config'
+import axios from 'axios';
+import Utils from '../../../../utils/Util';
 
 /**
  * Register component
@@ -14,41 +15,36 @@ export default {
 	components: { Layout },
 	data() {
 		return {
-			fullname: '',
+			api: Utils.Host(),
+			first_name: '',
+			last_name: '',
 			email: '',
 			password: '',
 			regError: null,
 			tryingToRegister: false,
 			isRegisterError: false,
+			alert:false,
+			alert_berhasil:false
 		}
 	},
 	computed: {},
 	methods: {
-		...authMethods,
-		// Try to register the user in with the email, fullname
-		// and password they provided.
-		tryToRegisterIn() {
-			this.tryingToRegister = true
-			// Reset the regError if it existed.
-			this.regError = null
-			return this.register({
-				fullname: this.fullname,
-				email: this.email,
-				password: this.password,
-			})
-				.then((token) => {
-					this.tryingToRegister = false
-					this.isRegisterError = false
-					// Redirect to the originally requested page, or to the confirm-account page
-					this.$router.push(
-						this.$route.query.redirectFrom || { name: 'confirm-account' }
-					)
-				})
-				.catch((error) => {
-					this.tryingToRegister = false
-					this.regError = error.response ? error.response.data.message : ''
-					this.isRegisterError = true
-				})
+		async Daftar() {
+		try {
+			const dataisi = new URLSearchParams();
+			dataisi.append("email", this.email);
+			dataisi.append("password", this.password);
+			dataisi.append("first_name", this.first_name);
+			dataisi.append("last_name", this.last_name);
+			let response = await axios.post(this.api+"/registration", dataisi);
+			if (response.data.status === '200'){
+				this.alert_berhasil = true
+				this.message =  response.data.message
+			} 
+		} catch (err) {
+			this.alert = true
+			this.message =  err.response.data.message
+		}
 		},
 	},
 }
@@ -78,7 +74,22 @@ export default {
 											>Buat akun gratis dan mulai gunakan Contract SIMS PPOB</p
 										>
 
-										<form action="#" class="authentication-form">
+										<b-alert
+											v-model="alert"
+											variant="danger"
+											dismissible
+											>{{ message }}</b-alert
+										>
+
+										
+										<b-alert
+											v-model="alert_berhasil"
+											variant="success"
+											dismissible
+											>{{ message }}</b-alert
+										>
+
+										
 											<div class="form-group">
 												<label class="form-control-label">Nama Awal</label>
 												<div class="input-group input-group-merge">
@@ -92,6 +103,7 @@ export default {
 														type="text"
 														class="form-control"
 														placeholder="Nama Awal"
+														v-model="first_name"
 														required
 													/>
 												</div>
@@ -110,6 +122,7 @@ export default {
 														type="text"
 														class="form-control"
 														placeholder="Nama Akhir"
+														v-model="last_name"
 														required
 													/>
 												</div>
@@ -128,6 +141,7 @@ export default {
 														type="email"
 														class="form-control"
 														placeholder="hello@nutech-integrasi.com"
+														v-model="email"
 													/>
 												</div>
 											</div>
@@ -145,6 +159,7 @@ export default {
 														type="password"
 														class="form-control"
 														placeholder="Enter your password"
+														v-model="password"
 													/>
 												</div>
 											</div>
@@ -161,11 +176,10 @@ export default {
 											</div>
 
 											<div class="form-group mb-0 text-center">
-												<button class="btn btn-primary btn-block" type="submit"
+												<button class="btn btn-primary btn-block" @click="Daftar"
 													>Daftar</button
 												>
 											</div>
-										</form>
 									</div>
 
 									<div class="col-lg-6 d-none d-md-inline-block">
