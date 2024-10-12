@@ -3,89 +3,15 @@ import store from '@state/store'
 // auth related routes
 const authRoutes = [
   {
-    path: '/login',
+    path: '/',
     name: 'login',
     component: () => lazyLoadView(import('@views/pages/account/login')),
-    meta: {
-      beforeResolve(routeTo, routeFrom, next) {
-        // If the user is already logged in
-        if (store.getters['auth/loggedIn']) {
-          // Redirect to the home page instead
-          next({ name: 'dashboard' })
-        } else {
-          // Continue to the login page
-          next()
-        }
-      },
-    },
   },
   {
     path: '/register',
     name: 'register',
     component: () => lazyLoadView(import('@views/pages/account/register')),
     meta: {
-      beforeResolve(routeTo, routeFrom, next) {
-        // If the user is already logged in
-        if (store.getters['auth/loggedIn']) {
-          // Redirect to the home page instead
-          next({ name: 'dashboard' })
-        } else {
-          // Continue to the login page
-          next()
-        }
-      },
-    },
-  },
-  {
-    path: '/confirm-account',
-    name: 'confirm-account',
-    component: () => lazyLoadView(import('@views/pages/account/confirm')),
-    meta: {
-      beforeResolve(routeTo, routeFrom, next) {
-        // If the user is already logged in
-        if (store.getters['auth/loggedIn']) {
-          // Redirect to the home page instead
-          next({ name: 'dashboard' })
-        } else {
-          // Continue to the login page
-          next()
-        }
-      },
-    },
-  },
-  {
-    path: '/forget-password',
-    name: 'forget-password',
-    component: () =>
-      lazyLoadView(import('@views/pages/account/forgetPassword')),
-    meta: {
-      beforeResolve(routeTo, routeFrom, next) {
-        // If the user is already logged in
-        if (store.getters['auth/loggedIn']) {
-          // Redirect to the home page instead
-          next({ name: 'dashboard' })
-        } else {
-          // Continue to the login page
-          next()
-        }
-      },
-    },
-  },
-  {
-    path: '/logout',
-    name: 'logout',
-    meta: {
-      authRequired: true,
-      beforeResolve(routeTo, routeFrom, next) {
-        store.dispatch('auth/logOut')
-        const authRequiredOnPreviousRoute = routeFrom.matched.some(
-          (route) => route.meta.authRequired
-        )
-        // Navigate back to previous page, or home as a fallback
-        next(
-          authRequiredOnPreviousRoute ? { name: 'dashboard' } : { ...routeFrom }
-        )
-      },
     },
   },
 ]
@@ -96,8 +22,6 @@ const errorPagesRoutes = [
     path: '/404',
     name: '404',
     component: require('@views/pages/secondary/error-404').default,
-    // Allows props to be passed to the 404 page through route
-    // params, such as `resource` to define what wasn't found.
     props: true,
   },
   {
@@ -106,9 +30,6 @@ const errorPagesRoutes = [
     component: require('@views/pages/secondary/error-500').default,
     props: true,
   },
-  // Redirect any unmatched routes to the 404 page. This may
-  // require some server configuration to work in production:
-  // https://router.vuejs.org/en/essentials/history-mode.html#example-server-configurations
   {
     path: '*',
     redirect: '404',
@@ -118,17 +39,11 @@ const errorPagesRoutes = [
 // dashboard
 const dashboardRoutes = [
   {
-    path: '/',
+    path: '/dashboard',
     name: 'Dashboard',
     header: 'Navigation',
     icon: 'home',
-    badge: {
-      text: '1',
-      varient: 'success',
-    },
     component: () => lazyLoadView(import('@views/pages/dashboard/dashboard')),
-    meta: { authRequired: true },
-    props: (route) => ({ user: store.state.auth.currentUser || {} }),
   },
 ]
 

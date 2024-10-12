@@ -1,12 +1,12 @@
 const activities = [
   {
     time: '02 hours ago',
-    title: 'Designing Shreyu Admin',
+    title: 'DesigningNutech Admin',
     text: 'Shreyu Admin - A responsive admin and dashboard template',
   },
   {
     time: '21 hours ago',
-    title: 'UX and UI for Shreyu Admin',
+    title: 'UX and UI forNutech Admin',
     text: 'Shreyu Admin - A responsive admin and dashboard template',
   },
   {

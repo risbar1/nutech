@@ -56,7 +56,7 @@
 
       <div class="mt-1 pt-2 border-top text-left">
         <p class="text-muted mb-2">
-          Hi I'm Shreyu. I am foodie and love to eat different cuisine!
+          Hi I'mNutech. I am foodie and love to eat different cuisine!
         </p>
       </div>
 

@@ -208,7 +208,7 @@ export default {
 									Sudah punya akun ?
 									<router-link
 										tag="a"
-										to="/login"
+										to="/"
 										class="text-primary font-weight-bold ml-1"
 										>Log In</router-link
 									>

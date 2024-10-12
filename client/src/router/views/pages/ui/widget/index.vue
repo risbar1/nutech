@@ -223,12 +223,12 @@ export default {
 					id: 2,
 				},
 				{
-					title: 'Write a release note for Shreyu',
+					title: 'Write a release note forNutech',
 					text: 'Due on 22 Aug, 2019',
 					id: 3,
 				},
 				{
-					title: 'Invite Greeva to a project shreyu admin',
+					title: 'Invite Greeva to a projectNutech admin',
 					text: 'Due on 21 Aug, 2019',
 					id: 4,
 				},

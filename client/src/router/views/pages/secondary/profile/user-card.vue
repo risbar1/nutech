@@ -41,7 +41,7 @@
 			<div class="mt-5 pt-2 border-top">
 				<h4 class="mb-3 font-size-15">About</h4>
 				<p class="text-muted mb-4">
-					Hi I'm Shreyu. I am user experience and user interface designer. I
+					Hi I'mNutech. I am user experience and user interface designer. I
 					have been working on UI & UX since last 10 years.
 				</p>
 			</div>
