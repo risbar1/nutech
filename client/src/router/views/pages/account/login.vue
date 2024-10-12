@@ -1,7 +1,9 @@
 <script>
 import Layout from '@layouts/default'
-import { authMethods } from '@state/helpers'
 import appConfig from '@src/app.config'
+import axios from 'axios';
+import Utils from '../../../../utils/Util';
+
 
 /**
  * Login component
@@ -14,48 +16,33 @@ export default {
 	components: { Layout },
 	data() {
 		return {
-			email: '',
-			password: '',
-			authError: null,
-			tryingToLogIn: false,
-			isAuthError: false,
+			api: Utils.Host(),
+			email: "",
+			password: "",
+			message:"",
+			alert:false,
 		}
 	},
 	computed: {
-		placeholders() {
-			return process.env.NODE_ENV === 'production'
-				? {}
-				: {
-						email: 'Use "admin" to log in with the mock API',
-						password: 'Use "password" to log in with the mock API',
-				  }
-		},
 	},
 	methods: {
-		...authMethods,
-		// Try to log the user in with the username
-		// and password they provided.
-		tryToLogIn() {
-			this.tryingToLogIn = true
-			// Reset the authError if it existed.
-			this.authError = null
-			return this.logIn({
-				username: this.username,
-				password: this.password,
-			})
-				.then((token) => {
-					this.tryingToLogIn = false
-					this.isAuthError = false
-					// Redirect to the originally requested page, or to the home page
-					this.$router.push(
-						this.$route.query.redirectFrom || { name: 'Dashboard' }
-					)
-				})
-				.catch((error) => {
-					this.tryingToLogIn = false
-					this.authError = error.response ? error.response.data.message : ''
-					this.isAuthError = true
-				})
+		async Login() {
+		try {
+			const akun = new URLSearchParams();
+			akun.append("email", this.email);
+			akun.append("password", this.password);
+			let response = await axios.post(this.api+"/login", akun);
+			if (response.data.status === '0'){
+			let token = response.data.data.token;
+			localStorage.setItem("jwt", token);
+			if (token) {
+				this.$router.push("dashboard");
+			}
+			} 
+		} catch (err) {
+			this.alert = true
+			this.message =  err.response.data.message
+		}
 		},
 	},
 }
@@ -83,16 +70,12 @@ export default {
 
 
 										<b-alert
-											v-model="isAuthError"
+											v-model="alert"
 											variant="danger"
 											dismissible
-											>{{ authError }}</b-alert
+											>{{ message }}</b-alert
 										>
 
-										<b-form
-											class="authentication-form"
-											@submit.prevent="tryToLogIn"
-										>
 											<div class="form-group">
 												<label class="form-control-label">Email</label>
 												<div class="input-group input-group-merge">
@@ -138,10 +121,11 @@ export default {
 													type="submit"
 													variant="primary"
 													class="btn-block"
+													@click="Login"
 													>Log In</b-button
 												>
 											</b-form-group>
-										</b-form><br><br><br>
+										<br><br><br>
 									</div>
 									<div class="col-lg-6 d-none d-md-inline-block">
 										<div class="auth-page-sidebar">

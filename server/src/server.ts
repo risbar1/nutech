@@ -7,7 +7,6 @@ import loginRouter from "./module/login/routes";
 import helmet from "helmet";
 var bodyParser = require('body-parser')
 
-
 const app = express();
 
 app.use(express.json({ limit: "100000mb" }));
