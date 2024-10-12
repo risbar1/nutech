@@ -35,6 +35,7 @@ app.get("/api/riskyakbar", (req: Request, res: Response) => {
 app.use("/", loginRouter);
 
 
+
 app.all("*", (req: Request, res: Response) => {
   res.status(404).json({
     status: "GAGAL",

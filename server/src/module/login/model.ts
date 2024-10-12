@@ -1,26 +1,27 @@
 import { sequelize, DataTypes } from "./../../db";
 
 
-const WsModel = sequelize.define("password", {
+const WsModel = sequelize.define("akun", {
   email: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING(120),
     allowNull: false,
   },
   first_name: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING(40),
     allowNull: false,
   },
   last_name: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING(40),
     allowNull: false,
   },
   password: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING(200),
     allowNull: false,
   },
   }, {
-  timestamps: false,
+  timestamps: true,
   schema: 'public',
+  freezeTableName: true,
   },
   );
 
