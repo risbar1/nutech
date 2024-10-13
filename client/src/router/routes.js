@@ -47,6 +47,16 @@ const dashboardRoutes = [
   },
 ]
 
+const profileRoutes = [
+  {
+    path: '/profile',
+    name: 'Profile',
+    header: 'Navigation',
+    icon: 'home',
+    component: () => lazyLoadView(import('@views/pages/dashboard/profile')),
+  },
+]
+
 // apps
 const calendarAppsRoutes = [
   {
@@ -362,6 +372,7 @@ const chartsRoutes = [
 
 const authProtectedRoutes = [
   ...dashboardRoutes,
+  ...profileRoutes,
   ...appsRoutes,
   ...pagesRoutes,
   ...uiRoutes,

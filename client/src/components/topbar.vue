@@ -55,6 +55,12 @@ export default {
 			>
 				<li class="d-none d-sm-block">
 					<a href="dashboard">Dashboard</a>
+				</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<li class="d-none d-sm-block">
+					<a href="profile">Profile</a>
+				</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<li class="d-none d-sm-block">
+					<a href="/">Keluar</a>
 				</li>
 
 			</ul>
