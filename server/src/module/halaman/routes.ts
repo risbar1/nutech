@@ -5,6 +5,7 @@ import {
   BannerController,
   Servicescontroller,
   Profilecontroller,
+  Profileputcontroller,
 } from "./halaman.controller";
 
 const router = express.Router();
@@ -20,5 +21,9 @@ router
 router
 .route("/profile")
 .get(Profilecontroller)
+
+router
+.route("/profile")
+.put(Profileputcontroller)
 
 export default router;

@@ -50,6 +50,46 @@ export const Servicescontroller = async (
 };
 
 
+export const Profileputcontroller = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const authHeader = req.header('authorization');
+    const token =
+      req.body.token || req.query.token || req.headers["x-access-token"] || authHeader && authHeader.split(' ')[1];
+    const user = jwt.decode(token)
+
+    const { first_name, last_name, alamat, hp } = req.body;
+
+    const data = await WsModel.update(
+      { first_name: first_name,
+        last_name: last_name,
+        hp: hp,
+        alamat: alamat
+       },
+      {
+      where: {
+        email: user.email,
+      },
+      returning: true,  
+      plain: true,
+    });
+      
+    res.status(200).json({
+      status: "0",
+      message:'Update Pofile berhasil',
+      data: data
+    });
+    
+} catch (err) {
+    res.status(500).json({
+      status: "500",
+      message:'Error in registering user',
+    });
+}
+};
+
 export const Profilecontroller = async (
   req: Request,
   res: Response
