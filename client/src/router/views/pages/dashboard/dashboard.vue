@@ -54,6 +54,24 @@ export default {
 			</div>
 		</div>
 
+		<br>
+		<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+						<b-tabs class="navtab-bg" pills justified>
+							<b-tab title="Balance" active>
+							</b-tab>
+							<b-tab title="Topup">
+							</b-tab>
+							<b-tab title="Transaction">
+							</b-tab>
+							<b-tab title="Transaction History">
+							</b-tab>
+						</b-tabs>
+					</div>
+				</div>
+			</div>
+
 		<div class="row page-title align-items-center">
 			<div class="col-sm-4 col-xl-6">
 				<h4 class="mb-1 mt-0">Services</h4>

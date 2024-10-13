@@ -21,6 +21,12 @@ const WsModel = sequelize.define("akun", {
   profile_image: {
     type: DataTypes.TEXT,
   },
+  hp: {
+    type: DataTypes.STRING(15),
+  },
+  alamat: {
+    type: DataTypes.STRING(255),
+  },
   }, {
   timestamps: true,
   schema: 'public',
