@@ -6,6 +6,7 @@ import {
   Servicescontroller,
   Profilecontroller,
   Profileputcontroller,
+  Imageputcontroller,
 } from "./halaman.controller";
 
 const router = express.Router();
@@ -25,5 +26,9 @@ router
 router
 .route("/profile")
 .put(Profileputcontroller)
+
+router
+.route("/image")
+.put(Imageputcontroller)
 
 export default router;

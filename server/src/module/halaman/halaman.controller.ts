@@ -78,7 +78,45 @@ export const Profileputcontroller = async (
       
     res.status(200).json({
       status: "0",
-      message:'Update Pofile berhasil',
+      message:'Update Profile berhasil',
+      data: data
+    });
+    
+} catch (err) {
+    res.status(500).json({
+      status: "500",
+      message:'Error in registering user',
+    });
+}
+};
+
+
+export const Imageputcontroller = async (
+  req: Request,
+  res: Response
+) => {
+  try {
+    const authHeader = req.header('authorization');
+    const token =
+      req.body.token || req.query.token || req.headers["x-access-token"] || authHeader && authHeader.split(' ')[1];
+    const user = jwt.decode(token)
+
+    const { profile_image } = req.body;
+
+    const data = await WsModel.update(
+      { profile_image: profile_image,
+       },
+      {
+      where: {
+        email: user.email,
+      },
+      returning: true,  
+      plain: true,
+    });
+      
+    res.status(200).json({
+      status: "0",
+      message:'Update Image berhasil',
       data: data
     });
     
