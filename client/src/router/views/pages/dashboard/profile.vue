@@ -26,8 +26,10 @@ export default {
 		dataprofile:[],
 		dataupdate:false,
 		databiodata:true,
+		dataimage:false,
 		alert_berhasil:false,
-		message:""
+		message:"",
+		file:""
 		}
 	},
 	mounted() {
@@ -37,7 +39,9 @@ export default {
 	methods: {
 		async Gantifoto() {
 		try {
-			this.$router.push("/profile");
+			this.dataupdate = false
+			this.databiodata = false
+			this.dataimage = true
 		} catch (err) {
 			console.error(err);
 		}
@@ -46,6 +50,7 @@ export default {
 		try {
 			this.dataupdate = true
 			this.databiodata = false
+			this.dataimage = false
 		} catch (err) {
 			console.error(err);
 		}
@@ -75,6 +80,30 @@ export default {
 			this.message =  err.response.data.message
 		}
 		},
+		async Updatefoto() {
+		try {
+			let rawImg;
+			const file = document.querySelector('input[name=gambar]').files[0];
+			const reader = new FileReader();
+		
+			reader.onloadend = async () => {
+			rawImg = reader.result;
+			//
+			const dataisi = new URLSearchParams();	
+			dataisi.append("profile_image", rawImg);
+
+			let response = await axios.put(this.api+"/halaman/image", dataisi, Utils.authHeader());
+			if (response.data.status === '0'){
+				this.alert_berhasil = true
+				this.message =  response.data.message
+			} 
+			}
+			reader.readAsDataURL(file);
+		} catch (err) {
+			this.alert = true
+			this.message =  err.response.data.message
+		}
+		},
 	},
 }
 </script>
@@ -93,7 +122,7 @@ export default {
 		<div class="card-body">
 			<div class="text-center mt-3">
 				<img
-					src="@assets/images/users/avatar-7.jpg"
+					:src="dataprofile.profile_image"
 					alt
 					class="avatar-lg rounded-circle"
 				/>
@@ -195,6 +224,23 @@ export default {
 								</td>
 							</tr>
 						</tbody>
+
+						<tbody v-if="dataimage === true">
+							<tr>
+								<th scope="row">Foto</th>
+								<td>
+									<input type="file" name="gambar"  accept="application/jpg">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<button class="btn btn-primary btn-block" @click="Updatefoto"
+										>Update Foto</button
+									>
+								</td>
+							</tr>
+						</tbody>
+						
 					</table>
 				</div>
 			</div>
