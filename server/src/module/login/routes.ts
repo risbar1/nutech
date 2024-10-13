@@ -1,8 +1,7 @@
 import express from "express";
-import { validate } from "../..//middleware/validate";
 import {
   LoginController,
-  RegistrasiController
+  RegistrasiController,
 } from "./login.controller";
 
 const router = express.Router();
@@ -14,5 +13,6 @@ router
 router
 .route("/registration")
 .post(RegistrasiController)
+
 
 export default router;

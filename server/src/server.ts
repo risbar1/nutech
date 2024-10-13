@@ -4,10 +4,15 @@ import morgan from "morgan";
 import cors from "cors";
 import { connectDB, sequelize } from "./db";
 import loginRouter from "./module/login/routes";
+import halamanRouter from "./module/halaman/routes";
 import helmet from "helmet";
 var bodyParser = require('body-parser')
+import { auth } from "../src/middleware/auth"
+
 
 const app = express();
+
+
 
 app.use(express.json({ limit: "100000mb" }));
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
@@ -32,7 +37,7 @@ app.get("/api/riskyakbar", (req: Request, res: Response) => {
 // npm run start
 
 app.use("/", loginRouter);
-
+app.use("/halaman", auth, halamanRouter);
 
 
 app.all("*", (req: Request, res: Response) => {
