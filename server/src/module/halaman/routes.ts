@@ -2,13 +2,18 @@ import express from "express";
 
 
 import {
-  Bannerontroller,
+  BannerController,
+  Servicescontroller,
 } from "./halaman.controller";
 
 const router = express.Router();
 
 router
 .route("/banner")
-.get(Bannerontroller)
+.get(BannerController)
+
+router
+.route("/services")
+.get(Servicescontroller)
 
 export default router;

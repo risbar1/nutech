@@ -24,7 +24,7 @@ export default {
 		return {
 		api: Utils.Host(),
 		databanner:[],
-
+		dataservices:[]
 		}
 	},
 	mounted() {
@@ -36,6 +36,8 @@ export default {
 		try {
 			let response = await axios.get(this.api+"/halaman/banner", Utils.authHeader());
 			this.databanner = response.data.data;
+			let response_services = await axios.get(this.api+"/halaman/services", Utils.authHeader());
+			this.dataservices = response_services.data.data;
 		} catch (err) {
 			console.error(err);
 		}
@@ -52,6 +54,17 @@ export default {
 			</div>
 		</div>
 
+		
+		<div class="row" >
+			<div class="col-sm-3" v-for="(tampil,index) in dataservices" :key="tampil.service_code">
+				<center><b>{{tampil.service_code}}</b><br>
+				{{tampil.service_name}}
+				<br>
+				<img :src="tampil.service_icon" width="100%">
+				<b>{{ tampil.service_tarif }}</b>
+				</center>
+			</div>
+		</div><br>
 		<div class="row" >
 			<div class="col-sm-3" v-for="(tampil,index) in databanner" :key="tampil.banner_name">
 				<b>{{tampil.banner_name}}</b><br>
