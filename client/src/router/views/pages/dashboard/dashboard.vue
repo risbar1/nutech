@@ -54,7 +54,11 @@ export default {
 			</div>
 		</div>
 
-		
+		<div class="row page-title align-items-center">
+			<div class="col-sm-4 col-xl-6">
+				<h4 class="mb-1 mt-0">Services</h4>
+			</div>
+		</div>
 		<div class="row" >
 			<div class="col-sm-2" v-for="(tampil,index) in dataservices" :key="tampil.service_code">
 				<center><b>{{tampil.service_code}}</b><br>
@@ -64,7 +68,7 @@ export default {
 				<b>{{ tampil.service_tarif }}</b>
 				</center>
 			</div>
-		</div><br>
+		</div><br><br><br>
 		<div class="row" >
 			<div class="col-sm-3" v-for="(tampil,index) in databanner" :key="tampil.banner_name">
 				<b>{{tampil.banner_name}}</b><br>
