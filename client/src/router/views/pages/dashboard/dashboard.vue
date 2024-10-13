@@ -56,7 +56,7 @@ export default {
 
 		
 		<div class="row" >
-			<div class="col-sm-3" v-for="(tampil,index) in dataservices" :key="tampil.service_code">
+			<div class="col-sm-2" v-for="(tampil,index) in dataservices" :key="tampil.service_code">
 				<center><b>{{tampil.service_code}}</b><br>
 				{{tampil.service_name}}
 				<br>
