@@ -14,7 +14,7 @@ export default {
       title: 'Activity/Timeline',
       items: [
         {
-          text: 'Shreyu',
+          text: 'Nutech',
           href: '/',
         },
         {

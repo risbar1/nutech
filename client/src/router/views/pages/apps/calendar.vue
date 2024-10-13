@@ -24,7 +24,7 @@ export default {
 			title: 'Calendar',
 			items: [
 				{
-					text: 'Shreyu',
+					text: 'Nutech',
 					href: '/',
 				},
 				{

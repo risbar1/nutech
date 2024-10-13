@@ -18,7 +18,7 @@ export default {
       title: 'Tasks List',
       items: [
         {
-          text: 'Shreyu',
+          text: 'Nutech',
           href: '/',
         },
         {

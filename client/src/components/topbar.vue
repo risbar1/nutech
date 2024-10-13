@@ -39,13 +39,13 @@ export default {
 	<div class="navbar navbar-expand flex-column flex-md-row navbar-custom">
 		<div class="container-fluid">
 			<!-- LOGO -->
-			<a href="/" class="navbar-brand mr-0 mr-md-2 logo">
+			<a href="/dashboard" class="navbar-brand mr-0 mr-md-2 logo">
 				<span class="logo-lg">
-					<img src="@assets/images/logo.png" alt height="24" />
-					<span class="d-inline h5 ml-2 text-logo">Shreyu</span>
+					<img src="https://nutech-integrasi.com/wp-content/uploads/2019/09/Logo-Nutech-ok.png" alt height="24" />
+					<span class="d-inline h5 ml-2 text-logo">Nutech Contract SIMS PPOB</span>
 				</span>
 				<span class="logo-sm">
-					<img src="@assets/images/logo.png" alt height="24" />
+					<img src="https://nutech-integrasi.com/wp-content/uploads/2019/09/Logo-Nutech-ok.png" alt height="24" />
 				</span>
 			</a>
 

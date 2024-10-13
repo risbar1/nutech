@@ -64,7 +64,7 @@ export default {
 											<a href="/">
 												<img src="@assets/images/logo.png" alt height="24" />
 												<h3 class="d-inline align-middle ml-1 text-logo"
-													>Shreyu</h3
+													>Nutech</h3
 												>
 											</a>
 										</div>

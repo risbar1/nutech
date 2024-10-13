@@ -17,7 +17,7 @@ export default {
       title: 'Basic Tables',
       items: [
         {
-          text: 'Shreyu',
+          text: 'Nutech',
           href: '/',
         },
         {

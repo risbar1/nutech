@@ -27,7 +27,7 @@ export default {
       title: 'Forms Validation',
       items: [
         {
-          text: 'Shreyu',
+          text: 'Nutech',
           href: '/',
         },
         {

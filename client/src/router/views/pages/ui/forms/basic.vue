@@ -14,7 +14,7 @@ export default {
       title: 'Basic Forms',
       items: [
         {
-          text: 'Shreyu',
+          text: 'Nutech',
           href: '/',
         },
         {

@@ -17,7 +17,7 @@ export default {
       title: 'Starter',
       items: [
         {
-          text: 'Shreyu',
+          text: 'Nutech',
           href: '/',
         },
         {

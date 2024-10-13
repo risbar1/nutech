@@ -22,7 +22,7 @@ export default {
       title: 'Email Detail',
       items: [
         {
-          text: 'Shreyu',
+          text: 'Nutech',
           href: '/',
         },
         {

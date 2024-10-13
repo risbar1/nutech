@@ -24,7 +24,7 @@ export default {
       title: 'Email Inbox',
       items: [
         {
-          text: 'Shreyu',
+          text: 'Nutech',
           href: '/',
         },
         {
@@ -81,7 +81,7 @@ export default {
                   </div>
                 </div>
                 <div class="media-body overflow-hidden">
-                  <h5 class="font-size-14 mt-1 mb-0">Shreyu</h5>
+                  <h5 class="font-size-14 mt-1 mb-0">Nutech</h5>
                   <small class="text-muted">
                     <i class="uil uil-circle font-size-11 text-success"></i>
                     Active Now

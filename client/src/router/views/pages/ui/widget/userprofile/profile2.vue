@@ -1,6 +1,6 @@
 <template>
   <div class="card profile-widget">
-    <img src="@assets/images/covers/2.jpg" alt="Shreyu" class="card-img-top" />
+    <img src="@assets/images/covers/2.jpg" alt="Nutech" class="card-img-top" />
     <b-dropdown
       class="card-action float-right"
       variant="black"
@@ -32,7 +32,7 @@
           alt
           class="img-thumbnail avatar-xl rounded-circle"
         />
-        <h5 class="mt-2 mb-0">Shreyu N</h5>
+        <h5 class="mt-2 mb-0">Nutech N</h5>
         <h6 class="text-muted font-weight-normal mt-2 mb-4">
           User Experience Specialist
         </h6>

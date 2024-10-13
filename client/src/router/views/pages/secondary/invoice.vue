@@ -17,7 +17,7 @@ export default {
 			title: 'Invoice',
 			items: [
 				{
-					text: 'Shreyu',
+					text: 'Nutech',
 					href: '/',
 				},
 				{
@@ -88,7 +88,7 @@ export default {
 						<div class="clearfix">
 							<div class="float-sm-right">
 								<img src="@assets/images/logo.png" alt height="48" />
-								<h4 class="m-0 d-inline align-middle">Shreyu</h4>
+								<h4 class="m-0 d-inline align-middle">Nutech</h4>
 								<address class="pl-2 mt-2">
 									{{ invoiceDetail.address.line_1 }}
 									<br />{{ invoiceDetail.address.city }},

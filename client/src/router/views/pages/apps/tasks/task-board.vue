@@ -22,7 +22,7 @@ export default {
 			title: 'Project Tasks Board',
 			items: [
 				{
-					text: 'Shreyu',
+					text: 'Nutech',
 					href: '/',
 				},
 				{
@@ -72,7 +72,7 @@ export default {
 									toggle-class="font-weight-bold p-0 align-middle"
 								>
 									<template v-slot:button-content>
-										Shreyu Design
+										Nutech Design
 										<i class="uil uil-angle-down font-size-16 align-middle"></i>
 									</template>
 									<a class="dropdown-item" href="#">
@@ -80,7 +80,7 @@ export default {
 											class="icon-dual icon-xs mr-2 align-middle"
 											type="hard-drive"
 										></feather
-										>Shreyu Design
+										>Nutech Design
 									</a>
 									<a class="dropdown-item" href="#">
 										<feather
@@ -95,14 +95,14 @@ export default {
 											class="icon-dual icon-xs mr-2 align-middle"
 											type="folder-plus"
 										></feather
-										>Shreyu Angular
+										>Nutech Angular
 									</a>
 									<a class="dropdown-item" href="#">
 										<feather
 											class="icon-dual icon-xs mr-2 align-middle"
 											type="folder-plus"
 										></feather
-										>Shreyu React
+										>Nutech React
 									</a>
 								</b-dropdown>
 							</div>

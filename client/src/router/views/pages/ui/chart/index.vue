@@ -57,7 +57,7 @@ export default {
 			title: 'Charts',
 			items: [
 				{
-					text: 'Shreyu',
+					text: 'Nutech',
 					href: '/',
 				},
 				{

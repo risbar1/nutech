@@ -47,7 +47,7 @@ export default {
 			title: 'Bootstrap UI',
 			items: [
 				{
-					text: 'Shreyu',
+					text: 'Nutech',
 					href: '/',
 				},
 				{

@@ -62,13 +62,13 @@ export default {
 							<p class="text-muted mb-0 font-size-13">
 								<i class="uil uil-calender mr-1"></i>12:15 PM - 02:00 PM
 							</p>
-							<h6 class="mt-1 font-size-16">Shreyu v4 Brainstorming</h6>
+							<h6 class="mt-1 font-size-16">Nutech v4 Brainstorming</h6>
 						</li>
 						<li class="mb-4">
 							<p class="text-muted mb-0 font-size-13">
 								<i class="uil uil-calender mr-1"></i>5:30 PM - 06:15 PM
 							</p>
-							<h6 class="mt-1 font-size-16">Shreyu React Planning</h6>
+							<h6 class="mt-1 font-size-16">Nutech React Planning</h6>
 						</li>
 						<li>
 							<a

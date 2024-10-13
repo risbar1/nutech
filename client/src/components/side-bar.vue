@@ -93,12 +93,12 @@ export default {
 			<img
 				src="@assets/images/users/avatar-7.jpg"
 				class="avatar-sm rounded-circle mr-2"
-				alt="Shreyu"
+				alt="Nutech"
 			/>
 			<img
 				src="@assets/images/users/avatar-7.jpg"
 				class="avatar-xs rounded-circle mr-2"
-				alt="Shreyu"
+				alt="Nutech"
 			/>
 
 			<div class="media-body">

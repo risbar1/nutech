@@ -5,10 +5,10 @@
         <img
           src="@assets/images/users/avatar-7.jpg"
           class="avatar-lg rounded-circle mr-2"
-          alt="shreyu"
+          alt="Nutech"
         />
         <div class="media-body">
-          <h5 class="mt-2 mb-0">Shreyu N</h5>
+          <h5 class="mt-2 mb-0">Nutech N</h5>
           <h6 class="text-muted font-weight-normal mt-1 mb-4">New York, USA</h6>
         </div>
         <b-dropdown

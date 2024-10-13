@@ -56,7 +56,7 @@ export default {
 				this.messages.push({
 					image: require('@assets/images/users/avatar-7.jpg'),
 					id: id + 1,
-					name: 'Shreyu',
+					name: 'Nutech',
 					message,
 					time: currentDate.getHours() + ':' + currentDate.getMinutes(),
 				})

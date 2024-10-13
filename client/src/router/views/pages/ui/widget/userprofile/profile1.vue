@@ -10,7 +10,7 @@ export default {}
           alt
           class="avatar-xl rounded-circle"
         />
-        <h5 class="mt-2 mb-0">Shreyu N</h5>
+        <h5 class="mt-2 mb-0">Nutech N</h5>
         <h6 class="text-muted font-weight-normal mt-2 mb-4">
           User Experience Specialist
         </h6>

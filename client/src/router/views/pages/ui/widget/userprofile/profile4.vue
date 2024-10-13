@@ -6,12 +6,12 @@
           <img
             src="@assets/images/users/avatar-7.jpg"
             class="card-img"
-            alt="shreyu"
+            alt="Nutech"
           />
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title mb-1">Shreyu N</h5>
+            <h5 class="card-title mb-1">Nutech N</h5>
             <h6 class="text-muted font-weight-normal mt-0 mb-3"
               >New York, USA</h6
             >
@@ -40,12 +40,12 @@
           <img
             src="@assets/images/users/avatar-7.jpg"
             class="mr-3 avatar-lg rounded"
-            alt="shreyu"
+            alt="Nutech"
           />
           <div class="media-body">
-            <h5 class="mt-1 mb-0">Shreyu N</h5>
+            <h5 class="mt-1 mb-0">Nutech N</h5>
             <h6 class="font-weight-normal mt-1 mb-1">
-              <a href>@shreyu</a>
+              <a href>@Nutech</a>
             </h6>
             <p class="text-muted">Designer | Creative | Thinker</p>
           </div>

@@ -19,7 +19,7 @@ export default {
 			title: 'Forms Wizard',
 			items: [
 				{
-					text: 'Shreyu',
+					text: 'Nutech',
 					href: '/',
 				},
 				{
